@@ -13,6 +13,7 @@ class MoviesViewController: UIViewController {
     
     static let cellID = "movie-cell"
     var movies: [Movie] = []
+    var currentPage = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +23,10 @@ class MoviesViewController: UIViewController {
 
     
     
-    func getMovies () {
-        APIService.shared.movies {
+    func getMovies (page: Int = 1) {
+        APIService.shared.movies (page: page) {
             movies, error in
             if let movies = movies {
-                self.movies.removeAll()
                 self.movies += movies
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -39,12 +39,18 @@ class MoviesViewController: UIViewController {
 }
 
 
-extension MoviesViewController: UITableViewDataSource {
+extension MoviesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.row == movies.count - 1 {
+            currentPage += 1
+            getMovies()
+        }
+        
         var cell: UITableViewCell!
         cell = tableView.dequeueReusableCell(withIdentifier: MoviesViewController.cellID)
         if cell == nil {
@@ -57,5 +63,10 @@ extension MoviesViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = currentMovie.release_date
         
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
