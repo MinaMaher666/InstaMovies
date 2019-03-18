@@ -20,7 +20,18 @@
 		E6B5CA40223FC594007340FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA3F223FC594007340FE /* Extensions.swift */; };
 		E6B5CA42223FC5B4007340FE /* GeneralUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA41223FC5B4007340FE /* GeneralUtils.swift */; };
 		E6B5CA44223FC748007340FE /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA43223FC748007340FE /* MoviesViewController.swift */; };
+		E6B5CA4C223FCC2C007340FE /* InstaMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA4B223FCC2C007340FE /* InstaMoviesTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E6B5CA4E223FCC2C007340FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6B5CA0E223FB8A9007340FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6B5CA15223FB8A9007340FE;
+			remoteInfo = InstaMovies;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E6B5CA16223FB8A9007340FE /* InstaMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,10 +49,20 @@
 		E6B5CA3F223FC594007340FE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E6B5CA41223FC5B4007340FE /* GeneralUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUtils.swift; sourceTree = "<group>"; };
 		E6B5CA43223FC748007340FE /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		E6B5CA49223FCC2C007340FE /* InstaMoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaMoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6B5CA4B223FCC2C007340FE /* InstaMoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaMoviesTests.swift; sourceTree = "<group>"; };
+		E6B5CA4D223FCC2C007340FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E6B5CA13223FB8A9007340FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6B5CA46223FCC2C007340FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -55,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				E6B5CA18223FB8A9007340FE /* InstaMovies */,
+				E6B5CA4A223FCC2C007340FE /* InstaMoviesTests */,
 				E6B5CA17223FB8A9007340FE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				E6B5CA16223FB8A9007340FE /* InstaMovies.app */,
+				E6B5CA49223FCC2C007340FE /* InstaMoviesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,6 +151,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E6B5CA4A223FCC2C007340FE /* InstaMoviesTests */ = {
+			isa = PBXGroup;
+			children = (
+				E6B5CA4B223FCC2C007340FE /* InstaMoviesTests.swift */,
+				E6B5CA4D223FCC2C007340FE /* Info.plist */,
+			);
+			path = InstaMoviesTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,6 +180,24 @@
 			productReference = E6B5CA16223FB8A9007340FE /* InstaMovies.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E6B5CA48223FCC2C007340FE /* InstaMoviesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6B5CA50223FCC2C007340FE /* Build configuration list for PBXNativeTarget "InstaMoviesTests" */;
+			buildPhases = (
+				E6B5CA45223FCC2C007340FE /* Sources */,
+				E6B5CA46223FCC2C007340FE /* Frameworks */,
+				E6B5CA47223FCC2C007340FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6B5CA4F223FCC2C007340FE /* PBXTargetDependency */,
+			);
+			name = InstaMoviesTests;
+			productName = InstaMoviesTests;
+			productReference = E6B5CA49223FCC2C007340FE /* InstaMoviesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -160,6 +210,10 @@
 				TargetAttributes = {
 					E6B5CA15223FB8A9007340FE = {
 						CreatedOnToolsVersion = 10.0;
+					};
+					E6B5CA48223FCC2C007340FE = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = E6B5CA15223FB8A9007340FE;
 					};
 				};
 			};
@@ -177,6 +231,7 @@
 			projectRoot = "";
 			targets = (
 				E6B5CA15223FB8A9007340FE /* InstaMovies */,
+				E6B5CA48223FCC2C007340FE /* InstaMoviesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -189,6 +244,13 @@
 				E6B5CA24223FB8AA007340FE /* LaunchScreen.storyboard in Resources */,
 				E6B5CA21223FB8AA007340FE /* Assets.xcassets in Resources */,
 				E6B5CA1F223FB8A9007340FE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6B5CA47223FCC2C007340FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +274,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E6B5CA45223FCC2C007340FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6B5CA4C223FCC2C007340FE /* InstaMoviesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E6B5CA4F223FCC2C007340FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6B5CA15223FB8A9007340FE /* InstaMovies */;
+			targetProxy = E6B5CA4E223FCC2C007340FE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E6B5CA1D223FB8A9007340FE /* Main.storyboard */ = {
@@ -388,6 +466,46 @@
 			};
 			name = Release;
 		};
+		E6B5CA51223FCC2C007340FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6798296UK9;
+				INFOPLIST_FILE = InstaMoviesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmaher.InstaMoviesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstaMovies.app/InstaMovies";
+			};
+			name = Debug;
+		};
+		E6B5CA52223FCC2C007340FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6798296UK9;
+				INFOPLIST_FILE = InstaMoviesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmaher.InstaMoviesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstaMovies.app/InstaMovies";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -405,6 +523,15 @@
 			buildConfigurations = (
 				E6B5CA29223FB8AA007340FE /* Debug */,
 				E6B5CA2A223FB8AA007340FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6B5CA50223FCC2C007340FE /* Build configuration list for PBXNativeTarget "InstaMoviesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6B5CA51223FCC2C007340FE /* Debug */,
+				E6B5CA52223FCC2C007340FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
