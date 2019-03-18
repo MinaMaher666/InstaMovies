@@ -15,6 +15,16 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func getMovies () {
+        APIService.shared.movies {
+            movies, error in
+            
+            if let movies = movies {
+                
+            } else if let error = error {
+                self.presentMessage(message: error)
+            }
+        }
+    }
+    
 }
-
