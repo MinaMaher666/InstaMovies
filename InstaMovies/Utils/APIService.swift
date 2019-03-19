@@ -25,7 +25,7 @@ class APIService {
         let urlWithParamsString = NetworkUtils.appendQueryParamsToUrl(Constants.url_movies, params: params)
         guard let url = URL(string: urlWithParamsString) else { return }
         
-        NetworkUtils.request(logTitle: "Movies", url) {
+        NetworkUtils.request(logTitle: logTitle, url) {
             data, error in
             if let data = data {
                 do {

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit.UIImage
 
 typealias RequestCompletion = (Data?, String?) -> ()
 class NetworkUtils {
@@ -34,18 +34,37 @@ class NetworkUtils {
         
         let task = URLSession.shared.dataTask(with: url) {
             data, _, error in
-           
+            
             if let data = data {
                 if let dataString = String(data: data, encoding: .utf8) {
                      print("\(responseLog(for: logTitle))\(dataString)\(responseLog(for: logTitle))")
                 }
-                completion(data, nil)
+                DispatchQueue.main.async {
+                    completion(data, nil)
+                }
             } else if let error = error {
                 print("\(responseLog(for: logTitle))\(error)\(responseLog(for: logTitle))")
-                completion(nil, "Network Error")
+                DispatchQueue.main.async {
+                    completion(nil, "Network Error")                    
+                }
             }
         }
         
         task.resume()
+    }
+    
+    
+    static func imageForUrl (_ path: String, completion: @escaping (UIImage?) -> ()) {
+        let urlString = Constants.url_base_image + path
+        guard let url = URL(string: urlString) else { completion(nil); return }
+        request(logTitle: "DownloadImage", url) {
+            data, _ in
+            if let data = data {
+                let image = UIImage(data: data)
+                completion(image)
+            } else {
+                completion(nil)
+            }
+        }
     }
 }

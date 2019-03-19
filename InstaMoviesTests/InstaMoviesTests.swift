@@ -30,5 +30,4 @@ class InstaMoviesTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertNotNil(data)
     }
-
 }

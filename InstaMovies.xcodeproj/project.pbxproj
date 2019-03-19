@@ -13,7 +13,7 @@
 		E6B5CA21223FB8AA007340FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6B5CA20223FB8AA007340FE /* Assets.xcassets */; };
 		E6B5CA24223FB8AA007340FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B5CA22223FB8AA007340FE /* LaunchScreen.storyboard */; };
 		E6B5CA33223FBA1E007340FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA32223FBA1E007340FE /* Constants.swift */; };
-		E6B5CA35223FBAD0007340FE /* MoviesAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA34223FBAD0007340FE /* MoviesAPIService.swift */; };
+		E6B5CA35223FBAD0007340FE /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA34223FBAD0007340FE /* APIService.swift */; };
 		E6B5CA37223FBB28007340FE /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA36223FBB28007340FE /* NetworkUtils.swift */; };
 		E6B5CA3A223FC251007340FE /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA39223FC251007340FE /* Movie.swift */; };
 		E6B5CA3C223FC26B007340FE /* MoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA3B223FC26B007340FE /* MoviesResponse.swift */; };
@@ -21,6 +21,9 @@
 		E6B5CA42223FC5B4007340FE /* GeneralUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA41223FC5B4007340FE /* GeneralUtils.swift */; };
 		E6B5CA44223FC748007340FE /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA43223FC748007340FE /* MoviesViewController.swift */; };
 		E6B5CA4C223FCC2C007340FE /* InstaMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA4B223FCC2C007340FE /* InstaMoviesTests.swift */; };
+		E6B5CA5522410261007340FE /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA5422410261007340FE /* MoviesViewModel.swift */; };
+		E6B5CA572241188F007340FE /* AddMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA562241188F007340FE /* AddMovieViewController.swift */; };
+		E6B5CA5A22411CAD007340FE /* UIDatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA5922411CAD007340FE /* UIDatePickerTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +45,7 @@
 		E6B5CA23223FB8AA007340FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6B5CA25223FB8AA007340FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6B5CA32223FBA1E007340FE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		E6B5CA34223FBAD0007340FE /* MoviesAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesAPIService.swift; sourceTree = "<group>"; };
+		E6B5CA34223FBAD0007340FE /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		E6B5CA36223FBB28007340FE /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		E6B5CA39223FC251007340FE /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		E6B5CA3B223FC26B007340FE /* MoviesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesResponse.swift; sourceTree = "<group>"; };
@@ -52,6 +55,9 @@
 		E6B5CA49223FCC2C007340FE /* InstaMoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaMoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6B5CA4B223FCC2C007340FE /* InstaMoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaMoviesTests.swift; sourceTree = "<group>"; };
 		E6B5CA4D223FCC2C007340FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6B5CA5422410261007340FE /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
+		E6B5CA562241188F007340FE /* AddMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieViewController.swift; sourceTree = "<group>"; };
+		E6B5CA5922411CAD007340FE /* UIDatePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDatePickerTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,10 +99,11 @@
 		E6B5CA18223FB8A9007340FE /* InstaMovies */ = {
 			isa = PBXGroup;
 			children = (
-				E6B5CA38223FC244007340FE /* Model */,
 				E6B5CA2E223FB9EB007340FE /* Utils */,
 				E6B5CA2D223FB9C0007340FE /* Supporting Files */,
+				E6B5CA38223FC244007340FE /* Model */,
 				E6B5CA2C223FB9B4007340FE /* Storyboards */,
+				E6B5CA5322410228007340FE /* ViewModel */,
 				E6B5CA2B223FB9AB007340FE /* View Controllers */,
 				E6B5CA25223FB8AA007340FE /* Info.plist */,
 			);
@@ -108,6 +115,7 @@
 			children = (
 				E6B5CA1B223FB8A9007340FE /* ViewController.swift */,
 				E6B5CA43223FC748007340FE /* MoviesViewController.swift */,
+				E6B5CA562241188F007340FE /* AddMovieViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -133,8 +141,9 @@
 		E6B5CA2E223FB9EB007340FE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E6B5CA5822411C96007340FE /* Custom Views */,
 				E6B5CA32223FBA1E007340FE /* Constants.swift */,
-				E6B5CA34223FBAD0007340FE /* MoviesAPIService.swift */,
+				E6B5CA34223FBAD0007340FE /* APIService.swift */,
 				E6B5CA36223FBB28007340FE /* NetworkUtils.swift */,
 				E6B5CA3F223FC594007340FE /* Extensions.swift */,
 				E6B5CA41223FC5B4007340FE /* GeneralUtils.swift */,
@@ -158,6 +167,22 @@
 				E6B5CA4D223FCC2C007340FE /* Info.plist */,
 			);
 			path = InstaMoviesTests;
+			sourceTree = "<group>";
+		};
+		E6B5CA5322410228007340FE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E6B5CA5422410261007340FE /* MoviesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E6B5CA5822411C96007340FE /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				E6B5CA5922411CAD007340FE /* UIDatePickerTextField.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,16 +286,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6B5CA35223FBAD0007340FE /* MoviesAPIService.swift in Sources */,
+				E6B5CA35223FBAD0007340FE /* APIService.swift in Sources */,
+				E6B5CA5A22411CAD007340FE /* UIDatePickerTextField.swift in Sources */,
 				E6B5CA44223FC748007340FE /* MoviesViewController.swift in Sources */,
 				E6B5CA1C223FB8A9007340FE /* ViewController.swift in Sources */,
 				E6B5CA3A223FC251007340FE /* Movie.swift in Sources */,
+				E6B5CA5522410261007340FE /* MoviesViewModel.swift in Sources */,
 				E6B5CA40223FC594007340FE /* Extensions.swift in Sources */,
 				E6B5CA3C223FC26B007340FE /* MoviesResponse.swift in Sources */,
 				E6B5CA37223FBB28007340FE /* NetworkUtils.swift in Sources */,
 				E6B5CA42223FC5B4007340FE /* GeneralUtils.swift in Sources */,
 				E6B5CA1A223FB8A9007340FE /* AppDelegate.swift in Sources */,
 				E6B5CA33223FBA1E007340FE /* Constants.swift in Sources */,
+				E6B5CA572241188F007340FE /* AddMovieViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

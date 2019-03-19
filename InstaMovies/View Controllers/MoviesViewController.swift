@@ -12,44 +12,61 @@ class MoviesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     static let cellID = "movie-cell"
-    var movies: [Movie] = []
-    var currentPage = 1
+    
+    var moviesViewModel: MoviesViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        getMovies()
+        instantiateViewModel()
     }
-
     
+    func instantiateViewModel() {
+        moviesViewModel = MoviesViewModel (moviesObserver: {
+            // weak self To Prevent Retaining of self
+            [weak self] in
+            self?.tableView.reloadData()
+        })
+        
+        moviesViewModel.errorObserver = {
+            [weak self] error in
+            self?.presentMessage(message: error)
+        }
+        
+        moviesViewModel.insertMoviesObserver = {
+            [weak self] rows in
+            let indexPaths = rows.map {IndexPath(row: $0, section: 0)}
+            self?.tableView.insertRows(at: indexPaths, with: .top)
+        }
+    }
     
-    func getMovies (page: Int = 1) {
-        APIService.shared.movies (page: page) {
-            movies, error in
-            if let movies = movies {
-                self.movies += movies
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } else if let error = error {
-                self.presentMessage(message: error)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let id = segue.identifier {
+            if id == "newMovieSegue" {
+                let destination = segue.destination as! AddMovieViewController
+                destination.delegate = self
             }
         }
     }
 }
 
 
+extension MoviesViewController: NewMovieDelegate {
+    func cancel() {
+    }
+    
+    func addNewMovie(movie: Movie) {
+        moviesViewModel.insertMovie(movie: movie)
+    }
+}
+
 extension MoviesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        return moviesViewModel.moviesCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == movies.count - 1 {
-            currentPage += 1
-            getMovies()
-        }
+        paginateIfRequired(indexPath.row)
         
         var cell: UITableViewCell!
         cell = tableView.dequeueReusableCell(withIdentifier: MoviesViewController.cellID)
@@ -57,16 +74,39 @@ extension MoviesViewController: UITableViewDataSource, UITableViewDelegate {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: MoviesViewController.cellID)
         }
         
-        
-        let currentMovie = movies[indexPath.row]
-        cell.textLabel?.text = currentMovie.title
-        cell.detailTextLabel?.text = currentMovie.release_date
-        
-        return cell
+        return bindCell(cell: cell, index: indexPath.row)
     }
     
+    func paginateIfRequired (_ index: Int) {
+        if index == moviesViewModel.moviesCount - 1 {
+            moviesViewModel.page += 1
+        }
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension MoviesViewController {
+    func bindCell (cell: UITableViewCell, index: Int) -> UITableViewCell {
+        cell.backgroundColor = .clear
+        let currentMovie = moviesViewModel.movieForIndex(index)
+        cell.textLabel?.text = currentMovie.title
+        cell.imageView?.image = UIImage(named: "logo")
+        if currentMovie.createdByUser ?? false {
+            cell.imageView?.image = UIImage(named: "logo")
+        } else if let posterPath = currentMovie.poster_path{
+            NetworkUtils.imageForUrl(posterPath) {
+                image in
+                if let image = image {
+                    DispatchQueue.main.async {
+                        cell.imageView?.image = image
+                    }
+                }
+            }
+        }
+        cell.detailTextLabel?.text = currentMovie.release_date
+        return cell
     }
 }

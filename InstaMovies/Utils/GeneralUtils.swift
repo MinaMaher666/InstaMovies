@@ -13,9 +13,6 @@ class GeneralUtils {
     private init () {}
     
     static func presentSimpleAlert (title: String = "InstaMovies", message: String, actions: [UIAlertAction] = []) -> UIAlertController {
-        
-        
-        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         if actions.isEmpty {
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
