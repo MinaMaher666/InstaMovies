@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias MoviesCompletion = (([Movie]?, String?) -> ())
+typealias MoviesCompletion = ((MoviesResponse?, String?) -> ())
 class APIService {
     static var shared = APIService()
     
@@ -30,7 +30,7 @@ class APIService {
             if let data = data {
                 do {
                     let response = try JSONDecoder().decode(MoviesResponse.self, from: data)
-                    completion(response.results, nil)
+                    completion(response, nil)
                 } catch {
                     print("\(NetworkUtils.responseLog(for: logTitle))Decoding Error: \(error)\(NetworkUtils.responseLog(for: logTitle))")
                     completion(nil, "Something went wrong")

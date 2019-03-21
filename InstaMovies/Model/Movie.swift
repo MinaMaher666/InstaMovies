@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit.UIImage
 
 struct Movie: Decodable {
     var id: Int
@@ -15,14 +16,6 @@ struct Movie: Decodable {
     var poster_path: String?
     var overview: String
     var release_date: String
-//    let vote_count: Int
-//    let video: Bool
-//    let popularity: Double
-//    let original_language: String
-//    let original_title: String
-//    let genre_ids: [Int]
-//    let backdrop_path: String
-//    let adult: Bool
     
     var createdByUser: Bool? = false
     

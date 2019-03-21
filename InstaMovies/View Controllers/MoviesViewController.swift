@@ -31,12 +31,11 @@ class MoviesViewController: UIViewController {
             [weak self] error in
             self?.presentMessage(message: error)
         }
-        
-        moviesViewModel.insertMoviesObserver = {
-            [weak self] rows in
-            let indexPaths = rows.map {IndexPath(row: $0, section: 0)}
-            self?.tableView.insertRows(at: indexPaths, with: .top)
-        }
+    }
+    
+    
+    @IBAction func changeCategory(_ sender: UISegmentedControl) {
+        moviesViewModel.category = MovieCategory(rawValue: sender.selectedSegmentIndex + 1) ?? .all
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

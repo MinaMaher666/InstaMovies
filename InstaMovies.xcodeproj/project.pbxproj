@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E604202B2243A2D100AD29CF /* KeyboardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604202A2243A2D100AD29CF /* KeyboardUtils.swift */; };
+		E6991CD722427934002BD246 /* MoviesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6991CD622427934002BD246 /* MoviesController.swift */; };
+		E6991CDB22427C75002BD246 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6991CDA22427C75002BD246 /* MovieCell.xib */; };
+		E6991CDE22427E44002BD246 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6991CDD22427E44002BD246 /* MovieCell.swift */; };
+		E6991CE12242AFC8002BD246 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6991CE02242AFC8002BD246 /* LoadingCell.xib */; };
+		E6991CE32242B000002BD246 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6991CE22242B000002BD246 /* LoadingCell.swift */; };
 		E6B5CA1A223FB8A9007340FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA19223FB8A9007340FE /* AppDelegate.swift */; };
 		E6B5CA1C223FB8A9007340FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA1B223FB8A9007340FE /* ViewController.swift */; };
 		E6B5CA1F223FB8A9007340FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B5CA1D223FB8A9007340FE /* Main.storyboard */; };
@@ -24,6 +30,7 @@
 		E6B5CA5522410261007340FE /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA5422410261007340FE /* MoviesViewModel.swift */; };
 		E6B5CA572241188F007340FE /* AddMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA562241188F007340FE /* AddMovieViewController.swift */; };
 		E6B5CA5A22411CAD007340FE /* UIDatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA5922411CAD007340FE /* UIDatePickerTextField.swift */; };
+		E6CBFB532242C5EC008A817C /* InstaMoviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CBFB522242C5EC008A817C /* InstaMoviesUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +41,22 @@
 			remoteGlobalIDString = E6B5CA15223FB8A9007340FE;
 			remoteInfo = InstaMovies;
 		};
+		E6CBFB552242C5EC008A817C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6B5CA0E223FB8A9007340FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6B5CA15223FB8A9007340FE;
+			remoteInfo = InstaMovies;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E604202A2243A2D100AD29CF /* KeyboardUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardUtils.swift; sourceTree = "<group>"; };
+		E6991CD622427934002BD246 /* MoviesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesController.swift; sourceTree = "<group>"; };
+		E6991CDA22427C75002BD246 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		E6991CDD22427E44002BD246 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		E6991CE02242AFC8002BD246 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		E6991CE22242B000002BD246 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		E6B5CA16223FB8A9007340FE /* InstaMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6B5CA19223FB8A9007340FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6B5CA1B223FB8A9007340FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +78,9 @@
 		E6B5CA5422410261007340FE /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
 		E6B5CA562241188F007340FE /* AddMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieViewController.swift; sourceTree = "<group>"; };
 		E6B5CA5922411CAD007340FE /* UIDatePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDatePickerTextField.swift; sourceTree = "<group>"; };
+		E6CBFB502242C5EC008A817C /* InstaMoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaMoviesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6CBFB522242C5EC008A817C /* InstaMoviesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaMoviesUITests.swift; sourceTree = "<group>"; };
+		E6CBFB542242C5EC008A817C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,14 +98,58 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E6CBFB4D2242C5EC008A817C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E6991CD822427C52002BD246 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E6B5CA1D223FB8A9007340FE /* Main.storyboard */,
+				E6B5CA22223FB8AA007340FE /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E6991CD922427C62002BD246 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E6991CDF2242AFBF002BD246 /* LoadingCell */,
+				E6991CDC22427E35002BD246 /* Movie Cell */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		E6991CDC22427E35002BD246 /* Movie Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E6991CDA22427C75002BD246 /* MovieCell.xib */,
+				E6991CDD22427E44002BD246 /* MovieCell.swift */,
+			);
+			path = "Movie Cell";
+			sourceTree = "<group>";
+		};
+		E6991CDF2242AFBF002BD246 /* LoadingCell */ = {
+			isa = PBXGroup;
+			children = (
+				E6991CE02242AFC8002BD246 /* LoadingCell.xib */,
+				E6991CE22242B000002BD246 /* LoadingCell.swift */,
+			);
+			path = LoadingCell;
+			sourceTree = "<group>";
+		};
 		E6B5CA0D223FB8A9007340FE = {
 			isa = PBXGroup;
 			children = (
 				E6B5CA18223FB8A9007340FE /* InstaMovies */,
 				E6B5CA4A223FCC2C007340FE /* InstaMoviesTests */,
+				E6CBFB512242C5EC008A817C /* InstaMoviesUITests */,
 				E6B5CA17223FB8A9007340FE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +159,7 @@
 			children = (
 				E6B5CA16223FB8A9007340FE /* InstaMovies.app */,
 				E6B5CA49223FCC2C007340FE /* InstaMoviesTests.xctest */,
+				E6CBFB502242C5EC008A817C /* InstaMoviesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,7 +170,7 @@
 				E6B5CA2E223FB9EB007340FE /* Utils */,
 				E6B5CA2D223FB9C0007340FE /* Supporting Files */,
 				E6B5CA38223FC244007340FE /* Model */,
-				E6B5CA2C223FB9B4007340FE /* Storyboards */,
+				E6B5CA2C223FB9B4007340FE /* View */,
 				E6B5CA5322410228007340FE /* ViewModel */,
 				E6B5CA2B223FB9AB007340FE /* View Controllers */,
 				E6B5CA25223FB8AA007340FE /* Info.plist */,
@@ -116,17 +184,18 @@
 				E6B5CA1B223FB8A9007340FE /* ViewController.swift */,
 				E6B5CA43223FC748007340FE /* MoviesViewController.swift */,
 				E6B5CA562241188F007340FE /* AddMovieViewController.swift */,
+				E6991CD622427934002BD246 /* MoviesController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		E6B5CA2C223FB9B4007340FE /* Storyboards */ = {
+		E6B5CA2C223FB9B4007340FE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E6B5CA1D223FB8A9007340FE /* Main.storyboard */,
-				E6B5CA22223FB8AA007340FE /* LaunchScreen.storyboard */,
+				E6991CD922427C62002BD246 /* Custom Cells */,
+				E6991CD822427C52002BD246 /* Storyboards */,
 			);
-			path = Storyboards;
+			path = View;
 			sourceTree = "<group>";
 		};
 		E6B5CA2D223FB9C0007340FE /* Supporting Files */ = {
@@ -147,6 +216,7 @@
 				E6B5CA36223FBB28007340FE /* NetworkUtils.swift */,
 				E6B5CA3F223FC594007340FE /* Extensions.swift */,
 				E6B5CA41223FC5B4007340FE /* GeneralUtils.swift */,
+				E604202A2243A2D100AD29CF /* KeyboardUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -183,6 +253,15 @@
 				E6B5CA5922411CAD007340FE /* UIDatePickerTextField.swift */,
 			);
 			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		E6CBFB512242C5EC008A817C /* InstaMoviesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E6CBFB522242C5EC008A817C /* InstaMoviesUITests.swift */,
+				E6CBFB542242C5EC008A817C /* Info.plist */,
+			);
+			path = InstaMoviesUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +302,24 @@
 			productReference = E6B5CA49223FCC2C007340FE /* InstaMoviesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		E6CBFB4F2242C5EC008A817C /* InstaMoviesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6CBFB592242C5EC008A817C /* Build configuration list for PBXNativeTarget "InstaMoviesUITests" */;
+			buildPhases = (
+				E6CBFB4C2242C5EC008A817C /* Sources */,
+				E6CBFB4D2242C5EC008A817C /* Frameworks */,
+				E6CBFB4E2242C5EC008A817C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6CBFB562242C5EC008A817C /* PBXTargetDependency */,
+			);
+			name = InstaMoviesUITests;
+			productName = InstaMoviesUITests;
+			productReference = E6CBFB502242C5EC008A817C /* InstaMoviesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -237,6 +334,10 @@
 						CreatedOnToolsVersion = 10.0;
 					};
 					E6B5CA48223FCC2C007340FE = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = E6B5CA15223FB8A9007340FE;
+					};
+					E6CBFB4F2242C5EC008A817C = {
 						CreatedOnToolsVersion = 10.0;
 						TestTargetID = E6B5CA15223FB8A9007340FE;
 					};
@@ -257,6 +358,7 @@
 			targets = (
 				E6B5CA15223FB8A9007340FE /* InstaMovies */,
 				E6B5CA48223FCC2C007340FE /* InstaMoviesTests */,
+				E6CBFB4F2242C5EC008A817C /* InstaMoviesUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -267,12 +369,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6B5CA24223FB8AA007340FE /* LaunchScreen.storyboard in Resources */,
+				E6991CE12242AFC8002BD246 /* LoadingCell.xib in Resources */,
 				E6B5CA21223FB8AA007340FE /* Assets.xcassets in Resources */,
+				E6991CDB22427C75002BD246 /* MovieCell.xib in Resources */,
 				E6B5CA1F223FB8A9007340FE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E6B5CA47223FCC2C007340FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6CBFB4E2242C5EC008A817C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -286,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6991CD722427934002BD246 /* MoviesController.swift in Sources */,
 				E6B5CA35223FBAD0007340FE /* APIService.swift in Sources */,
 				E6B5CA5A22411CAD007340FE /* UIDatePickerTextField.swift in Sources */,
 				E6B5CA44223FC748007340FE /* MoviesViewController.swift in Sources */,
@@ -293,7 +405,10 @@
 				E6B5CA3A223FC251007340FE /* Movie.swift in Sources */,
 				E6B5CA5522410261007340FE /* MoviesViewModel.swift in Sources */,
 				E6B5CA40223FC594007340FE /* Extensions.swift in Sources */,
+				E604202B2243A2D100AD29CF /* KeyboardUtils.swift in Sources */,
+				E6991CDE22427E44002BD246 /* MovieCell.swift in Sources */,
 				E6B5CA3C223FC26B007340FE /* MoviesResponse.swift in Sources */,
+				E6991CE32242B000002BD246 /* LoadingCell.swift in Sources */,
 				E6B5CA37223FBB28007340FE /* NetworkUtils.swift in Sources */,
 				E6B5CA42223FC5B4007340FE /* GeneralUtils.swift in Sources */,
 				E6B5CA1A223FB8A9007340FE /* AppDelegate.swift in Sources */,
@@ -310,6 +425,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E6CBFB4C2242C5EC008A817C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6CBFB532242C5EC008A817C /* InstaMoviesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -317,6 +440,11 @@
 			isa = PBXTargetDependency;
 			target = E6B5CA15223FB8A9007340FE /* InstaMovies */;
 			targetProxy = E6B5CA4E223FCC2C007340FE /* PBXContainerItemProxy */;
+		};
+		E6CBFB562242C5EC008A817C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6B5CA15223FB8A9007340FE /* InstaMovies */;
+			targetProxy = E6CBFB552242C5EC008A817C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -534,6 +662,44 @@
 			};
 			name = Release;
 		};
+		E6CBFB572242C5EC008A817C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6798296UK9;
+				INFOPLIST_FILE = InstaMoviesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmaher.InstaMoviesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = InstaMovies;
+			};
+			name = Debug;
+		};
+		E6CBFB582242C5EC008A817C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6798296UK9;
+				INFOPLIST_FILE = InstaMoviesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmaher.InstaMoviesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = InstaMovies;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -560,6 +726,15 @@
 			buildConfigurations = (
 				E6B5CA51223FCC2C007340FE /* Debug */,
 				E6B5CA52223FCC2C007340FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6CBFB592242C5EC008A817C /* Build configuration list for PBXNativeTarget "InstaMoviesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6CBFB572242C5EC008A817C /* Debug */,
+				E6CBFB582242C5EC008A817C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
