@@ -29,7 +29,14 @@ class MovieCell: UICollectionViewCell {
     func updatePoster () {
         imgPoster.image = UIImage(named: "image-placeholder")
         if movie.createdByUser ?? false {
-            imgPoster.image = UIImage(named: "image-placeholder")
+            if let imageURL = URL(string: movie.poster_path ?? "") {
+                if let data = try? Data(contentsOf: imageURL as URL) {
+                    let image = UIImage(data: data)
+                    imgPoster.image = image
+                } else {
+                     imgPoster.image = UIImage(named: "image-placeholder")
+                }
+            }
         } else if let posterPath = movie.poster_path{
             NetworkUtils.imageForUrl(posterPath) {
                 image in

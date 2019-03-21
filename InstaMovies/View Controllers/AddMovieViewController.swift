@@ -33,14 +33,13 @@ class AddMovieViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
-    }
-    
-    @objc func hideKeyboard () {
-        view.endEditing(true)
+    var imageURL: URL? = nil {
+        didSet {
+            if let imageURL = imageURL {
+                let data = try! Data(contentsOf: imageURL as URL)
+                poster = UIImage(data: data)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,7 +65,7 @@ class AddMovieViewController: UIViewController {
     
     @IBAction func addNewMovie() {
         if validateFields () {
-            let newMovie = Movie(title: txtMovieTitle.text!, overview: txtOverview.text!, release_date: txtReleaseDate.text!, vote_average: 10.0)
+            let newMovie = Movie(title: txtMovieTitle.text!, poster_path: imageURL?.absoluteString,overview: txtOverview.text!, release_date: txtReleaseDate.text!, vote_average: 10.0)
             delegate?.addNewMovie(movie: newMovie)
             dismiss()
         }
@@ -118,8 +117,7 @@ extension AddMovieViewController {
 // MARK:| ImagePicker Extension
 extension AddMovieViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[.originalImage] as! UIImage
-        poster = image
+        imageURL = info[.imageURL] as? URL
         picker.dismiss(animated: true, completion: nil)
     }
 }

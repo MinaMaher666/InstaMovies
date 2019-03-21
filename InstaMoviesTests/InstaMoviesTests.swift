@@ -38,6 +38,7 @@ class InstaMoviesTests: XCTestCase {
         XCTAssertEqual(otherMovies[0].title, "movie 1")
     }
     
+    
     func testMoviesAPI () {
         let promise = expectation(description: "Data Not Null")
         

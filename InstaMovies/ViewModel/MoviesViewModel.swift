@@ -57,6 +57,12 @@ class MoviesViewModel {
         getMovies()
     }
     
+    func paginateIfRequired (_ index: Int) {
+        if index == moviesCount - 1 && shouldPaginate {
+            page += 1
+        }
+    }
+    
     func movieForIndex (_ index: Int) -> Movie {
         return moviesByCategories[index]
     }

@@ -11,6 +11,10 @@ import UIKit
 
 class KeyboardUtils {
     static var shared = KeyboardUtils()
+    lazy var windowTapGesture = {
+        return UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+    }()
+    
     
     private init () {}
     
@@ -21,6 +25,7 @@ class KeyboardUtils {
     
     @objc private func keyboardWillShow (notification: Notification) {
         guard let window = UIApplication.shared.keyWindow else { return }
+        window.addGestureRecognizer(windowTapGesture)
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if window.frame.origin.y == 0{
                 window.frame.origin.y -= keyboardSize.height
@@ -30,6 +35,7 @@ class KeyboardUtils {
     
     @objc private func keyboardWillHide (notification: Notification) {
         guard let window = UIApplication.shared.keyWindow else { return }
+        window.removeGestureRecognizer(windowTapGesture)
         if let _ = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if window.frame.origin.y != 0 {
                 window.frame.origin.y = 0
@@ -42,7 +48,7 @@ class KeyboardUtils {
         doneToolbar.barStyle = .default
         
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonAction))
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(hideKeyboard))
         
         let items = [flexSpace, done]
         doneToolbar.items = items
@@ -52,7 +58,12 @@ class KeyboardUtils {
         textView?.inputAccessoryView = doneToolbar
     }
     
-    @objc static  func doneButtonAction() {
+    @objc static func hideKeyboard() {
+        guard let window = UIApplication.shared.keyWindow else { return }
+        window.endEditing(true)
+    }
+    
+    @objc func hideKeyboard() {
         guard let window = UIApplication.shared.keyWindow else { return }
         window.endEditing(true)
     }

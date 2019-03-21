@@ -32,7 +32,7 @@ class InstaMoviesUITests: XCTestCase {
         app/*@START_MENU_TOKEN@*/.segmentedControls.buttons["My Movies"]/*[[".segmentedControls.buttons[\"My Movies\"]",".buttons[\"My Movies\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.tap()
         app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .button).element.tap()
         app.buttons["Add Movie"].tap()
-        // Test cannot add empty movie
+        // Test validating new movie fields
         XCTAssertTrue(app.buttons["Add Movie"].exists)
     }
     

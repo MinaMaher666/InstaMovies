@@ -25,7 +25,6 @@
 		E6B5CA3C223FC26B007340FE /* MoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA3B223FC26B007340FE /* MoviesResponse.swift */; };
 		E6B5CA40223FC594007340FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA3F223FC594007340FE /* Extensions.swift */; };
 		E6B5CA42223FC5B4007340FE /* GeneralUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA41223FC5B4007340FE /* GeneralUtils.swift */; };
-		E6B5CA44223FC748007340FE /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA43223FC748007340FE /* MoviesViewController.swift */; };
 		E6B5CA4C223FCC2C007340FE /* InstaMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA4B223FCC2C007340FE /* InstaMoviesTests.swift */; };
 		E6B5CA5522410261007340FE /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA5422410261007340FE /* MoviesViewModel.swift */; };
 		E6B5CA572241188F007340FE /* AddMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA562241188F007340FE /* AddMovieViewController.swift */; };
@@ -71,7 +70,6 @@
 		E6B5CA3B223FC26B007340FE /* MoviesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesResponse.swift; sourceTree = "<group>"; };
 		E6B5CA3F223FC594007340FE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E6B5CA41223FC5B4007340FE /* GeneralUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUtils.swift; sourceTree = "<group>"; };
-		E6B5CA43223FC748007340FE /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		E6B5CA49223FCC2C007340FE /* InstaMoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaMoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6B5CA4B223FCC2C007340FE /* InstaMoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaMoviesTests.swift; sourceTree = "<group>"; };
 		E6B5CA4D223FCC2C007340FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				E6B5CA1B223FB8A9007340FE /* ViewController.swift */,
-				E6B5CA43223FC748007340FE /* MoviesViewController.swift */,
 				E6B5CA562241188F007340FE /* AddMovieViewController.swift */,
 				E6991CD622427934002BD246 /* MoviesController.swift */,
 			);
@@ -400,7 +397,6 @@
 				E6991CD722427934002BD246 /* MoviesController.swift in Sources */,
 				E6B5CA35223FBAD0007340FE /* APIService.swift in Sources */,
 				E6B5CA5A22411CAD007340FE /* UIDatePickerTextField.swift in Sources */,
-				E6B5CA44223FC748007340FE /* MoviesViewController.swift in Sources */,
 				E6B5CA1C223FB8A9007340FE /* ViewController.swift in Sources */,
 				E6B5CA3A223FC251007340FE /* Movie.swift in Sources */,
 				E6B5CA5522410261007340FE /* MoviesViewModel.swift in Sources */,
@@ -591,7 +587,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6798296UK9;
 				INFOPLIST_FILE = InstaMovies/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -610,7 +606,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6798296UK9;
 				INFOPLIST_FILE = InstaMovies/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
