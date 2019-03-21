@@ -28,4 +28,9 @@ struct Movie: Decodable {
         self.release_date = release_date
         self.vote_average = vote_average
     }
+    
+    func imageFromLocalFileUrl () -> UIImage? {
+        guard createdByUser ?? false, let poster_path = poster_path, let imageURL = URL(string: poster_path) else { return UIImage(named: "image-placeholder") }
+        return imageURL.imageForUrl
+    }
 }

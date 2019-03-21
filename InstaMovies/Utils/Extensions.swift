@@ -99,3 +99,10 @@ extension UITextView {
         }
     }
 }
+
+extension URL {
+    var imageForUrl: UIImage {
+        guard let data = try? Data(contentsOf: self) else {return UIImage(named: "image-placeholder")!}
+        return UIImage(data: data) ?? UIImage(named: "image-placeholder")!
+    }
+}

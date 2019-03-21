@@ -36,8 +36,7 @@ class AddMovieViewController: UIViewController {
     var imageURL: URL? = nil {
         didSet {
             if let imageURL = imageURL {
-                let data = try! Data(contentsOf: imageURL as URL)
-                poster = UIImage(data: data)
+                poster = imageURL.imageForUrl
             }
         }
     }
