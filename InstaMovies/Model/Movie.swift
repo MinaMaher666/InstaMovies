@@ -11,7 +11,6 @@ import UIKit.UIImage
 
 struct Movie: Decodable {
     var id: Int
-    var vote_average: Double
     var title: String
     var poster_path: String?
     var overview: String
@@ -19,18 +18,21 @@ struct Movie: Decodable {
     
     var createdByUser: Bool? = false
     
-    init(title: String, poster_path: String? = nil, overview: String, release_date: String, vote_average: Double) {
+    init(title: String, poster_path: String? = nil, overview: String, release_date: String) {
         self.id = 0
         self.createdByUser = true
         self.title = title
         self.poster_path = poster_path
         self.overview = overview
         self.release_date = release_date
-        self.vote_average = vote_average
     }
-    
+}
+
+extension Movie {
+    // Image From Gallery
     func imageFromLocalFileUrl () -> UIImage? {
         guard createdByUser ?? false, let poster_path = poster_path, let imageURL = URL(string: poster_path) else { return UIImage(named: "image-placeholder") }
         return imageURL.imageForUrl
     }
 }
+

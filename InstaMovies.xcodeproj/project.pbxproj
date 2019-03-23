@@ -14,7 +14,7 @@
 		E6991CE12242AFC8002BD246 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6991CE02242AFC8002BD246 /* LoadingCell.xib */; };
 		E6991CE32242B000002BD246 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6991CE22242B000002BD246 /* LoadingCell.swift */; };
 		E6B5CA1A223FB8A9007340FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA19223FB8A9007340FE /* AppDelegate.swift */; };
-		E6B5CA1C223FB8A9007340FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA1B223FB8A9007340FE /* ViewController.swift */; };
+		E6B5CA1C223FB8A9007340FE /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5CA1B223FB8A9007340FE /* SplashController.swift */; };
 		E6B5CA1F223FB8A9007340FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B5CA1D223FB8A9007340FE /* Main.storyboard */; };
 		E6B5CA21223FB8AA007340FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6B5CA20223FB8AA007340FE /* Assets.xcassets */; };
 		E6B5CA24223FB8AA007340FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B5CA22223FB8AA007340FE /* LaunchScreen.storyboard */; };
@@ -58,7 +58,7 @@
 		E6991CE22242B000002BD246 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		E6B5CA16223FB8A9007340FE /* InstaMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6B5CA19223FB8A9007340FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E6B5CA1B223FB8A9007340FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E6B5CA1B223FB8A9007340FE /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		E6B5CA1E223FB8A9007340FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6B5CA20223FB8AA007340FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6B5CA23223FB8AA007340FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -179,9 +179,9 @@
 		E6B5CA2B223FB9AB007340FE /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E6B5CA1B223FB8A9007340FE /* ViewController.swift */,
-				E6B5CA562241188F007340FE /* AddMovieViewController.swift */,
+				E6B5CA1B223FB8A9007340FE /* SplashController.swift */,
 				E6991CD622427934002BD246 /* MoviesController.swift */,
+				E6B5CA562241188F007340FE /* AddMovieViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -209,8 +209,8 @@
 			children = (
 				E6B5CA5822411C96007340FE /* Custom Views */,
 				E6B5CA32223FBA1E007340FE /* Constants.swift */,
-				E6B5CA34223FBAD0007340FE /* APIService.swift */,
 				E6B5CA36223FBB28007340FE /* NetworkUtils.swift */,
+				E6B5CA34223FBAD0007340FE /* APIService.swift */,
 				E6B5CA3F223FC594007340FE /* Extensions.swift */,
 				E6B5CA41223FC5B4007340FE /* GeneralUtils.swift */,
 				E604202A2243A2D100AD29CF /* KeyboardUtils.swift */,
@@ -221,8 +221,8 @@
 		E6B5CA38223FC244007340FE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E6B5CA39223FC251007340FE /* Movie.swift */,
 				E6B5CA3B223FC26B007340FE /* MoviesResponse.swift */,
+				E6B5CA39223FC251007340FE /* Movie.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -397,7 +397,7 @@
 				E6991CD722427934002BD246 /* MoviesController.swift in Sources */,
 				E6B5CA35223FBAD0007340FE /* APIService.swift in Sources */,
 				E6B5CA5A22411CAD007340FE /* UIDatePickerTextField.swift in Sources */,
-				E6B5CA1C223FB8A9007340FE /* ViewController.swift in Sources */,
+				E6B5CA1C223FB8A9007340FE /* SplashController.swift in Sources */,
 				E6B5CA3A223FC251007340FE /* Movie.swift in Sources */,
 				E6B5CA5522410261007340FE /* MoviesViewModel.swift in Sources */,
 				E6B5CA40223FC594007340FE /* Extensions.swift in Sources */,

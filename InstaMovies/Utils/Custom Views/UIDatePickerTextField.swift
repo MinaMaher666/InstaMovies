@@ -14,14 +14,10 @@ class UIDatePickerTextField: UITextField {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        addTarget(self, action: #selector(showDatePickerAction), for: .editingDidBegin)
+        addTarget(self, action: #selector(showDatePicker), for: .editingDidBegin)
     }
     
-    @objc func showDatePickerAction () {
-        showDatePicker()
-    }
-    
-    func showDatePicker(){
+    @objc func showDatePicker(){
         //Formate Date
         datePicker.datePickerMode = .date
         
@@ -36,7 +32,6 @@ class UIDatePickerTextField: UITextField {
         
         inputAccessoryView = toolbar
         inputView = datePicker
-        
     }
     
     @objc func donedatePicker(){

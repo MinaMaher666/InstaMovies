@@ -34,16 +34,20 @@ class NetworkUtils {
         
         let task = URLSession.shared.dataTask(with: url) {
             data, _, error in
-            
             if let data = data {
+                // Logging server response
                 if let dataString = String(data: data, encoding: .utf8) {
                      print("\(responseLog(for: logTitle))\(dataString)\(responseLog(for: logTitle))")
                 }
+                
                 DispatchQueue.main.async {
                     completion(data, nil)
                 }
+                
             } else if let error = error {
+                // Logging error
                 print("\(responseLog(for: logTitle))\(error)\(responseLog(for: logTitle))")
+                
                 DispatchQueue.main.async {
                     completion(nil, "Network Error")                    
                 }

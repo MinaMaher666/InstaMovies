@@ -46,7 +46,7 @@ class AddMovieViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
@@ -64,7 +64,7 @@ class AddMovieViewController: UIViewController {
     
     @IBAction func addNewMovie() {
         if validateFields () {
-            let newMovie = Movie(title: txtMovieTitle.text!, poster_path: imageURL?.absoluteString,overview: txtOverview.text!, release_date: txtReleaseDate.text!, vote_average: 10.0)
+            let newMovie = Movie(title: txtMovieTitle.text!, poster_path: imageURL?.absoluteString,overview: txtOverview.text!, release_date: txtReleaseDate.text!)
             delegate?.addNewMovie(movie: newMovie)
             dismiss()
         }
@@ -84,25 +84,7 @@ class AddMovieViewController: UIViewController {
 // MARK:| ImagePickerAlert Extension
 extension AddMovieViewController {
     func showImagePickerAlert () {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) &&
-            UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: {_ in
-                self.presentPickerWith(sourceType: .camera)
-            }))
-            alert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {_ in
-                self.presentPickerWith(sourceType: .photoLibrary)
-            }))
-            
-            present(alert, animated: true, completion: nil)
-        }
-        
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            presentPickerWith(sourceType: .camera)
-        } else if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            presentPickerWith(sourceType: .photoLibrary)
-        }
+        presentPickerWith(sourceType: .photoLibrary)
     }
     
     fileprivate func presentPickerWith (sourceType: UIImagePickerController.SourceType) {

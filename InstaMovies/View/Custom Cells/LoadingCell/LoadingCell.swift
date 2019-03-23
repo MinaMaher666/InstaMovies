@@ -9,5 +9,4 @@
 import Foundation
 import UIKit.UICollectionViewCell
 
-class LoadingCell: UICollectionViewCell {
-}
+class LoadingCell: UICollectionViewCell {}

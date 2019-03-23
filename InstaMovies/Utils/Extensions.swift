@@ -89,15 +89,6 @@ extension UITextView {
             return true
         }
     }
-    
-    func validate(with: ((String?) -> Bool)) -> Bool {
-        if !with(text) {
-            showError()
-            return false
-        } else {
-            return true
-        }
-    }
 }
 
 extension URL {

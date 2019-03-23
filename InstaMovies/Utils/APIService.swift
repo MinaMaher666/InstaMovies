@@ -9,13 +9,13 @@
 import Foundation
 
 typealias MoviesCompletion = ((MoviesResponse?, String?) -> ())
+
 class APIService {
     static var shared = APIService()
     
     private init () {}
     
     func movies (logTitle: String = "Movies", page: Int = 1, completion: @escaping MoviesCompletion) {
-        
         let params: [String:Any] = [
             Constants.param_api_key: Constants.api_key,
             Constants.param_page_key: page

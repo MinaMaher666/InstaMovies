@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SplashController: UIViewController {
     @IBOutlet weak var lblAppName: UILabel!
     @IBOutlet weak var logoYConstraint: NSLayoutConstraint!
     

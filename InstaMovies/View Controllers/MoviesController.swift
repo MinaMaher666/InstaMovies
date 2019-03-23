@@ -12,22 +12,28 @@ class MoviesController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
-    var isLoading: Bool = false {
+    var isLoading: Bool = true {
         didSet {
-            // Reload Data to Show/Hide loadingIndicatorCell
-            collectionView.reloadData()
+            // Reload data to show/hide loadingIndicatorCell
+            if isLoading {
+                // Insert loading indicator cell
+                let indexPath = IndexPath(item: moviesViewModel.moviesCount, section: 0)
+                collectionView.insertItems(at: [indexPath])
+            } else {
+                self.collectionView.reloadData()
+            }
         }
     }
     
     static let cellNibName = "MovieCell"
-    static let loadingCellNibName = "LoadingCell"
     static let cellID = "movie-cell"
+    static let loadingCellNibName = "LoadingCell"
     static let loadingCellID = "loading-cell"
+    
     static let itemsPerRow: CGFloat = 2
     static let itemWidth = {
         return (UIScreen.main.bounds.width / itemsPerRow)
     }()
-    
     static let itemHeight = {
         return (UIScreen.main.bounds.height / 2)
     }()
@@ -65,7 +71,7 @@ class MoviesController: UIViewController {
     }
     
     @IBAction func changeCategory(_ sender: UISegmentedControl) {
-        moviesViewModel.category = MovieCategory(rawValue: sender.selectedSegmentIndex + 1) ?? .all
+        moviesViewModel.category = MovieCategory(rawValue: sender.selectedSegmentIndex) ?? .all
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -86,6 +92,7 @@ extension MoviesController: NewMovieDelegate {
     func addNewMovie(movie: Movie) {
         moviesViewModel.insertMovie(movie: movie)
         if segmentControl.selectedSegmentIndex == 0 {
+            // Navigate to my movies section if not on it
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 self.segmentControl.selectedSegmentIndex = 1
                 self.changeCategory(self.segmentControl)
@@ -108,7 +115,7 @@ extension MoviesController: UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return moviesViewModel.moviesCount + (isLoading ? 1 : 0) // isLoading -> Has Loading cell
+        return moviesViewModel.moviesCount + (isLoading ? 1 : 0) // isLoading -> Has loading cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

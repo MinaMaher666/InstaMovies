@@ -12,17 +12,17 @@ import XCTest
 class InstaMoviesTests: XCTestCase {
     
     func testMoviesFilter () {
-        var movie1 = Movie(title: "movie 1", overview: "overview 1", release_date: "2020-02-02", vote_average: 10)
+        var movie1 = Movie(title: "movie 1", overview: "overview 1", release_date: "2020-02-02")
         movie1.createdByUser = false
-        var movie2 = Movie(title: "movie 2", overview: "overview 2", release_date: "2020-02-02", vote_average: 10)
+        var movie2 = Movie(title: "movie 2", overview: "overview 2", release_date: "2020-02-02")
          movie2.createdByUser = false
-        var movie3 = Movie(title: "movie 3", overview: "overview 3", release_date: "2020-02-02", vote_average: 10)
+        var movie3 = Movie(title: "movie 3", overview: "overview 3", release_date: "2020-02-02")
          movie3.createdByUser = false
-        var movie4 = Movie(title: "movie 4", overview: "overview 4", release_date: "2020-02-02", vote_average: 10)
+        var movie4 = Movie(title: "movie 4", overview: "overview 4", release_date: "2020-02-02")
          movie4.createdByUser = false
-        var movie5 = Movie(title: "movie 5", overview: "overview 5", release_date: "2020-02-02", vote_average: 10)
+        var movie5 = Movie(title: "movie 5", overview: "overview 5", release_date: "2020-02-02")
          movie5.createdByUser = false
-        let userMovie = Movie(title: "userMovie", overview: "overview", release_date: "2020-02-02", vote_average: 10)
+        let userMovie = Movie(title: "userMovie", overview: "overview", release_date: "2020-02-02")
         
         
         let moviesArr: [Movie] = [

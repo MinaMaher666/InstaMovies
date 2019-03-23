@@ -25,17 +25,25 @@ class MovieCell: UICollectionViewCell {
             }
         }
     }
-    
+}
+
+let imageCache = NSCache<AnyObject, AnyObject>()
+extension MovieCell {
     func updatePoster () {
         imgPoster.image = UIImage(named: "image-placeholder")
-        if movie.createdByUser ?? false {
-            imgPoster.image = movie.imageFromLocalFileUrl()
-        } else if let posterPath = movie.poster_path{
-            NetworkUtils.imageForUrl(posterPath) {
-                image in
-                if let image = image {
-                    self.imgPoster.image = image
-                }
+        guard let path = movie.poster_path else { return }
+        if let cachedImage = imageCache.object(forKey: path as AnyObject) as? UIImage {
+            imgPoster.image = cachedImage
+            return
+        }
+        
+        NetworkUtils.imageForUrl(path) {
+            image in
+            // Validating the requested image is the image for the movie path not a reused cell movie path
+            guard path == self.movie.poster_path else { return }
+            if let image = image {
+                imageCache.setObject(image, forKey: path as AnyObject)
+                self.imgPoster.image = image
             }
         }
     }

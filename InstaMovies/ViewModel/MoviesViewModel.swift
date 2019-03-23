@@ -9,7 +9,7 @@
 import Foundation
 
 enum MovieCategory: Int {
-    case all = 1
+    case all = 0
     case my_movies
     case both
 }
@@ -23,6 +23,7 @@ class MoviesViewModel {
             }
         }
     }
+    
     var movies: [Movie] = []
     var moviesByCategories: [Movie]
     var category: MovieCategory = .all {
@@ -49,6 +50,7 @@ class MoviesViewModel {
     var moviesObserver: (() -> ())?
     var errorObserver: ((String) -> ())?
     
+    // To prevent pagination while loading
     var isLoading: Bool = false
     
     init(moviesObserver: @escaping () -> ()) {
